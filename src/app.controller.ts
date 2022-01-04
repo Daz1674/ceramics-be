@@ -13,6 +13,7 @@ export class AppController {
   @Post('/image')
   @UseInterceptors(FileInterceptor('file'))
   checkImage(@UploadedFile() file: Express.Multer.File) {
+    // console.log(file)
     return this.appService.proccessImage(file);
   }
 }
